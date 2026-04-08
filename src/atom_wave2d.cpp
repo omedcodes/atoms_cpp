@@ -194,3 +194,23 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
         }
     }
 }
+
+int main() {
+    glfwSetKeyCallback(engine.window, key_callback);
+
+    while (!glfwWindowShouldClose(engine.window)) {
+        engine.run();
+
+        for(Atom &a : atoms) {
+            for (Particle &p : a.particles) {
+                p.draw(a.pos);
+
+                if (p.charge == -1)
+                    p.update(a.pos);
+            }
+        }
+
+        glfwSwapBuffers(engine.window);
+        glfwPollEvents();
+    }
+}

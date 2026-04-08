@@ -104,4 +104,31 @@ struct Particle {
         }
         glEnd();
     }
+    void update(vec2 c) {
+        float numOsolations = 0;
+        if (energy < 0){
+            numOsolations = -13.6 / energy;
+        }
+        float baseOrbit = orbitDistance;
+        float amplitude = 50.0f;
+        float r = baseOrbit + amplitude * sin(numOsolations * angle);
+
+        angle += 0.05f;
+        pos = vec2(cos(angle) * r + c.x, sin(angle) * r + c.y);
+    }
+};
+
+struct Atom {
+    vec2 pos;
+    vec2 v = vec2(0.0f);
+    vector<Particle> particles = { };
+    Atom(vec2 p) : pos(p) {
+        particles.emplace_back(pos, 1);//~proton
+        particles.emplace_back(vec2(pos.x - orbitDistance, pos.y), -1);// electron
+    }
+};
+vector<Atom> atoms {
+    Atom(vec2(0.0f, 0.0f)),
+    Atom(vec2(200.0f, 200.0f)),
+    Atom(vec2(400.0f, 200.0f))
 };

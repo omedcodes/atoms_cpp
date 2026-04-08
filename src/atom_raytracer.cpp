@@ -26,7 +26,7 @@ const double hbar = 1;
 const double m_e = 1;
 const double zmSpeed = 10.0;
 
-int N = 25000;
+int N = 1000;
 float LightingScaler = 700;
 float n = 3; float l = 1; float m = 1;
 
@@ -422,7 +422,7 @@ struct Engine {
     Engine () {
         if (!glfwInit()) { cerr << "GLFW init failed\n"; exit(EXIT_FAILURE); } 
 
-        window = glfwCreateWindow(WIDTH, HEIGHT, "Quantum Simulation by kavan G - Raytraced", nullptr, nullptr);
+        window = glfwCreateWindow(WIDTH, HEIGHT, "Quantum Simulation Raytraced", nullptr, nullptr);
         if (!window) { cerr << "Failed to create GLFW window\n"; glfwTerminate(); exit(EXIT_FAILURE); } 
         glfwMakeContextCurrent(window); glViewport(0, 0, WIDTH, HEIGHT); glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         

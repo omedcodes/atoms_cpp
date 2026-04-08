@@ -132,3 +132,65 @@ vector<Atom> atoms {
     Atom(vec2(200.0f, 200.0f)),
     Atom(vec2(400.0f, 200.0f))
 };
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) 
+{
+    if (action == GLFW_PRESS || action == GLFW_REPEAT)
+    {
+        if (key == GLFW_KEY_W)
+        {
+            for (Atom &a : atoms) {
+                for (Particle &p : a.particles) {
+                    p.energy += 0.01f;
+                    p.angle = 0;
+                    cout << "Particle energy: " << p.energy << endl;
+                }
+            }
+        }
+        else if (key == GLFW_KEY_S)
+        {
+            for (Atom &a : atoms) {
+                for (Particle &p : a.particles) {
+                    p.energy -= 0.01f;
+                    cout << "Particle energy: " << p.energy << endl;
+                }
+            }
+        }
+    if (key == GLFW_KEY_E)
+        {
+            for (Atom &a : atoms) {
+                for (Particle &p : a.particles) {
+                    p.energy += 0.1f;
+                    cout << "Particle energy: " << p.energy << endl;
+                }
+            }
+        }
+        else if (key == GLFW_KEY_D)
+        {
+            for (Atom &a : atoms) {
+                for (Particle &p : a.particles) {
+                    p.energy -= 0.1f;
+                    cout << "Particle energy: " << p.energy << endl;
+                }
+            }
+        }
+        if (key == GLFW_KEY_R)
+        {
+            for (Atom &a : atoms) {
+                for (Particle &p : a.particles) {
+                    p.energy += 1.0f;
+                    cout << "Particle energy: " << p.energy << endl;
+                }
+            }
+        }
+        else if (key == GLFW_KEY_F)
+        {
+            for (Atom &a : atoms) {
+                for (Particle &p : a.particles) {
+                    p.energy -= 1.0f;
+                    cout << "Particle energy: " << p.energy << endl;
+                }
+            }
+        }
+    }
+}

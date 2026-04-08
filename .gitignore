@@ -32,12 +32,8 @@ $RECYCLE.BIN/
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
-
 cmake-build-*/
-
 build
-
-
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
@@ -48,9 +44,7 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
-
 *.d
-
 *.slo
 *.lo
 *.o
@@ -68,11 +62,8 @@ _deps
 *.a
 *.lib
 
-*.exe
 *.out
 *.app
-
-*.bin
 
 *.d
 
@@ -97,7 +88,6 @@ _deps
 *.so.*
 *.dylib
 
-*.exe
 *.out
 *.app
 *.i*86

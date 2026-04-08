@@ -129,8 +129,6 @@ struct Atom {
 };
 vector<Atom> atoms {
     Atom(vec2(0.0f, 0.0f)),
-    Atom(vec2(200.0f, 200.0f)),
-    Atom(vec2(400.0f, 200.0f))
 };
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) 
